@@ -51,7 +51,8 @@ const BankInputsForm = () => {
             return;
         }
 
-        if(activityValues?.INN === ""){
+        if(!activityValues?.INN){
+            setIsSuccess(false);
             setError("Заполните для начала форму вида деятельности!");
             return;
         }
