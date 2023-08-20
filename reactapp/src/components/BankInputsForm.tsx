@@ -2,7 +2,7 @@ import Button from "./UI/Button";
 import {inputs} from "../data/inputs";
 import GenerateInputs from "./GenerateInputs";
 import {useDispatch, useSelector} from "react-redux";
-import {selectActivity, setShowBankDetails} from "../store/features/activitySlice";
+import {selectActivity, setActivityValues, setShowBankDetails} from "../store/features/activitySlice";
 import {TypeForm} from "../models/enum/TypeForm";
 import {ReactComponent as PlusIcon} from "../assets/plus.svg";
 import {useValuesInputsForm} from "../hooks/useValuesInputsForm";
@@ -30,7 +30,6 @@ const BankInputsForm = () => {
     useEffect(() => {
         if(needValueProperty?.length === 9)
             updateData(needValueProperty);
-
     }, [needValueProperty]);
 
     const updateData = async (valueBIC: string) => {
@@ -52,6 +51,11 @@ const BankInputsForm = () => {
             return;
         }
 
+        if(activityValues?.INN === ""){
+            setError("Заполните для начала форму вида деятельности!");
+            return;
+        }
+
         const valuesBankDetails = fillBankDetails(requiredForm.render, TypeForm.BankDetails);
 
         const formData = fillDataForRequest(
@@ -65,6 +69,9 @@ const BankInputsForm = () => {
         if(response.status === 200) {
             setError("");
             setIsSuccess(true);
+            dispatch(setActivityValues({}))
+        } else {
+            setError("Error when you tried send request!")
         }
     }
 
