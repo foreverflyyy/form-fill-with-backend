@@ -1,6 +1,6 @@
 import {z} from "zod";
 
-export const BankSchema = z.object({
+export const BankValidator = z.object({
     BIC: z.string().transform((val) => {
         if (val.length !== 9) throw new Error('БИК должен содержать 9 цифр')
         if (val === "" ) throw new Error('Заполните БИК')
@@ -24,7 +24,7 @@ export const BankSchema = z.object({
     })
 })
 
-export type TypeBankValidation = z.infer<typeof BankSchema>
+export type TypeBankValidation = z.infer<typeof BankValidator>
 
 function isInteger(value: string) {
     return /^\d+$/.test(value);

@@ -10,7 +10,7 @@ interface Props {
     changeValue: (value: TypesValues, idField: string) => void
 }
 
-const FormInputs = ({requiredForm, changeValue}: Props) => {
+const GenerateInputs = ({requiredForm, changeValue}: Props) => {
 
     return (
         <div className={"pt-[32px] flex flex-wrap content-start items-center"}>
@@ -52,4 +52,4 @@ const FormInputs = ({requiredForm, changeValue}: Props) => {
     );
 };
 
-export default FormInputs;
+export default GenerateInputs;

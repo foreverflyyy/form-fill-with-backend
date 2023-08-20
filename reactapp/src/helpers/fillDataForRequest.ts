@@ -1,4 +1,4 @@
-import {RequestValues, ValuesActivity, ValuesBankDetails} from "../models/RequestNewRequisite";
+import {RequestValues, ValuesActivity, ValuesBankDetails} from "../models/dto/RequestNewRequisite";
 import {TypeForm} from "../models/enum/TypeForm";
 import {NamesInputs} from "../models/enum/NamesInputs";
 

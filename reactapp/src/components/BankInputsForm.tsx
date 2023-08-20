@@ -1,6 +1,6 @@
 import Button from "./UI/Button";
-import {inputForms} from "../data/inputForms";
-import FormInputs from "./FormInputs";
+import {inputs} from "../data/inputs";
+import GenerateInputs from "./GenerateInputs";
 import {useDispatch, useSelector} from "react-redux";
 import {selectActivity, setShowBankDetails} from "../store/features/activitySlice";
 import {TypeForm} from "../models/enum/TypeForm";
@@ -22,7 +22,7 @@ const BankInputsForm = () => {
     const {activityValues, typeActivity} = useSelector(selectActivity);
     const dispatch = useDispatch();
 
-    const {requiredForm, changeValue} = useValuesInputsForm(inputForms, TypeForm.BankDetails);
+    const {requiredForm, changeValue} = useValuesInputsForm(inputs, TypeForm.BankDetails);
 
     const needValueProperty = requiredForm.render
         .find(item => item.id === NamesInputs.BIC)?.value as string;
@@ -77,7 +77,7 @@ const BankInputsForm = () => {
             {error && <h3 className={"text-red-500 italic"}>{error}</h3>}
             {isSuccess && <h3 className={"text-green-500 italic"}>Успешно!</h3>}
 
-            <FormInputs
+            <GenerateInputs
                 requiredForm={requiredForm}
                 changeValue={changeValue}
             />

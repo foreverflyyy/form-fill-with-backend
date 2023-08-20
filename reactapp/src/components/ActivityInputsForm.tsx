@@ -1,26 +1,26 @@
 import {useDispatch, useSelector} from "react-redux";
 import {selectActivity, setActivityValues, setShowBankDetails} from "../store/features/activitySlice";
-import {inputForms} from "../data/inputForms";
+import {inputs} from "../data/inputs";
 import Button from "./UI/Button";
 import {useValuesInputsForm} from "../hooks/useValuesInputsForm";
-import FormInputs from "./FormInputs";
+import GenerateInputs from "./GenerateInputs";
 import {useEffect, useState} from "react";
 import {NamesInputs} from "../models/enum/NamesInputs";
 import axios from "axios";
-import {ResponseInn} from "../models/ResponseInn";
+import {ResponseInn} from "../models/dto/ResponseInn";
 import {checkValidation} from "../helpers/checkValidation";
 import {fillActivityValues} from "../helpers/fillActivityValues";
 import {TypeForm} from "../models/enum/TypeForm";
 import {API_DATA_BY_INN, SERVER_PATH} from "../services/api";
 
-const FormFilling = () => {
+const ActivityInputsForm = () => {
 
     const [error, setError] = useState("");
 
     const dispatch = useDispatch();
     const {typeActivity} = useSelector(selectActivity);
 
-    const {requiredForm, changeValue} = useValuesInputsForm(inputForms, typeActivity);
+    const {requiredForm, changeValue} = useValuesInputsForm(inputs, typeActivity);
 
     const needValueProperty = requiredForm.render
         .find(item => item.id === NamesInputs.INN)?.value as string;
@@ -87,7 +87,7 @@ const FormFilling = () => {
                 {requiredForm.name}
             </h3>
 
-            <FormInputs
+            <GenerateInputs
                 requiredForm={requiredForm}
                 changeValue={changeValue}
             />
@@ -103,4 +103,4 @@ const FormFilling = () => {
     )
 };
 
-export default FormFilling;
+export default ActivityInputsForm;

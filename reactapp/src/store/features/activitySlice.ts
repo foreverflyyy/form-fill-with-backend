@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import {RootState} from "../index";
 import {TypeForm} from "../../models/enum/TypeForm";
-import {ValuesActivity} from "../../models/RequestNewRequisite";
+import {ValuesActivity} from "../../models/dto/RequestNewRequisite";
 
 export interface InitialType {
     typeActivity: TypeForm,

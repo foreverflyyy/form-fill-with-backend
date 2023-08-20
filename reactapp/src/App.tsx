@@ -1,7 +1,7 @@
 import {useSelector} from "react-redux";
 import BankInputsForm from "./components/BankInputsForm";
 import SelectTypeProperty from "./components/SelectTypeProperty";
-import FormFilling from "./components/FormFilling";
+import ActivityInputsForm from "./components/ActivityInputsForm";
 import {selectActivity} from "./store/features/activitySlice";
 import {ReactComponent as ArrowIcon} from "./assets/arrow.svg";
 
@@ -17,7 +17,7 @@ const App = () => {
                     <>
                         <SelectTypeProperty/>
                         <ArrowIcon/>
-                        <FormFilling/>
+                        <ActivityInputsForm/>
                     </>
                 )
             }

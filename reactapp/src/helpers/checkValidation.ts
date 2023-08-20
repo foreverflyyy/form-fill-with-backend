@@ -5,7 +5,7 @@ import {FormProperty} from "../models/FormProperty";
 import {ZodError} from "zod";
 import {TypeForm} from "../models/enum/TypeForm";
 import {LlcSchema} from "../lib/validate/LlcValidation";
-import {BankSchema} from "../lib/validate/BankSchema";
+import {BankValidator} from "../lib/validate/BankValidator";
 
 export const checkValidation = (requiredForm: FormProperty) => {
     const files = requiredForm.render.filter(item =>
@@ -32,7 +32,7 @@ export const checkValidation = (requiredForm: FormProperty) => {
         else if(requiredForm.name === TypeForm.LLC)
             response = LlcSchema.safeParse(data);
         else if(requiredForm.name === TypeForm.BankDetails)
-            response = BankSchema.safeParse(data);
+            response = BankValidator.safeParse(data);
         else
             response = {};
 

@@ -1,4 +1,4 @@
-import {ValuesActivity} from "../models/RequestNewRequisite";
+import {ValuesActivity} from "../models/dto/RequestNewRequisite";
 import {TypeForm} from "../models/enum/TypeForm";
 import {NamesInputs} from "../models/enum/NamesInputs";
 import {InputProperty} from "../models/FormProperty";

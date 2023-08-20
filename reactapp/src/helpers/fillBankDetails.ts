@@ -1,4 +1,4 @@
-import {ValuesBankDetails} from "../models/RequestNewRequisite";
+import {ValuesBankDetails} from "../models/dto/RequestNewRequisite";
 import {TypeForm} from "../models/enum/TypeForm";
 import {InputProperty} from "../models/FormProperty";
 import {NamesInputs} from "../models/enum/NamesInputs";

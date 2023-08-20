@@ -3,7 +3,7 @@ import {TypeInput} from "../models/enum/TypeInput";
 import {TypeForm} from "../models/enum/TypeForm";
 import {NamesInputs} from "../models/enum/NamesInputs";
 
-export const inputForms: FormProperty[] = [
+export const inputs: FormProperty[] = [
     {
         id: 1,
         name: TypeForm.Individual,
