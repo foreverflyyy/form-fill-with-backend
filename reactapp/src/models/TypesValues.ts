@@ -1,0 +1,1 @@
+export type TypesValues = string | boolean | File | null;
