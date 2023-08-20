@@ -30,6 +30,11 @@ const FormFilling = () => {
             updateData(needValueProperty);
     }, [needValueProperty]);
 
+    useEffect(() => {
+        setError("");
+    }, [typeActivity]);
+
+
     const updateData = async (valueInn: string) => {
         const response = await axios.get<ResponseInn>(`${SERVER_PATH}/${API_DATA_BY_INN}?Inn=${valueInn}`);
 

@@ -7,8 +7,6 @@ import {ReactComponent as ArrowIcon} from "./assets/arrow.svg";
 
 const App = () => {
 
-    console.log(1, process.env.REACT_APP_SERVER_PATH)
-
     const {showBankDetails} = useSelector(selectActivity);
 
     return (
