@@ -8,7 +8,6 @@ export interface InitialType {
     typeActivity: TypeForm,
     showBankDetails: boolean,
     activityValues: ValuesActivity,
-    bankValues:
 }
 
 const initialState: InitialType = {
