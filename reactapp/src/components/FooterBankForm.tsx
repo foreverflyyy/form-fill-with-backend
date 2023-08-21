@@ -19,19 +19,22 @@ const FooterBankForm = ({handlerAddNewBank, handlerRequest}: Props) => {
 
         inputs?.map(item => {
             item.render.map((subItem) => {
-                if (subItem.value instanceof File)
+                /*if (subItem.value instanceof File)
                     subItem.value = {} as File;
 
                 if(subItem.value instanceof boolean)
                     subItem.value = false;
 
                 if(subItem.value instanceof String)
-                    subItem.value = "";
+                    subItem.value = "";*/
+                subItem!.value = undefined;
 
                 return subItem
             })
             return item
-        })
+        });
+
+        console.log(1, inputs);
 
         dispatch(setActivityValues({}));
         dispatch(setShowBankDetails(false));
