@@ -5,6 +5,42 @@ import {NamesInputs} from "../models/enum/NamesInputs";
 
 export const inputs: FormProperty[] = [
     {
+        id: 0,
+        name: TypeForm.BankDetails,
+        render: [
+            {
+                id: NamesInputs.BIC,
+                type: TypeInput.Text,
+                label: "БИК",
+                required: true,
+                placeholder: 'ххххххххх',
+                value: "",
+            },
+            {
+                id: NamesInputs.NameBankBranch,
+                type: TypeInput.Text,
+                label: "Название филиала банка",
+                required: true,
+                placeholder: "ООО «Московская промышленная компания»",
+                value: ""
+            },
+            {
+                id: NamesInputs.PaymentAccount,
+                type: TypeInput.Text,
+                label: "Рассчетный счет",
+                required: true,
+                placeholder: 'хххххххххххххххххххх'
+            },
+            {
+                id: NamesInputs.CorrespondentAccount,
+                type: TypeInput.Text,
+                label: "Корреспондентский счет",
+                required: true,
+                placeholder: "хххххххххххххххххххх"
+            }
+        ]
+    },
+    {
         id: 1,
         name: TypeForm.Individual,
         render: [
@@ -150,40 +186,4 @@ export const inputs: FormProperty[] = [
             },
         ]
     },
-    {
-        id: 3,
-        name: TypeForm.BankDetails,
-        render: [
-            {
-                id: NamesInputs.BIC,
-                type: TypeInput.Text,
-                label: "БИК",
-                required: true,
-                placeholder: 'ххххххххх',
-                value: "",
-            },
-            {
-                id: NamesInputs.NameBankBranch,
-                type: TypeInput.Text,
-                label: "Название филиала банка",
-                required: true,
-                placeholder: "ООО «Московская промышленная компания»",
-                value: ""
-            },
-            {
-                id: NamesInputs.PaymentAccount,
-                type: TypeInput.Text,
-                label: "Рассчетный счет",
-                required: true,
-                placeholder: 'хххххххххххххххххххх'
-            },
-            {
-                id: NamesInputs.CorrespondentAccount,
-                type: TypeInput.Text,
-                label: "Корреспондентский счет",
-                required: true,
-                placeholder: "хххххххххххххххххххх"
-            }
-        ]
-    }
 ]

@@ -26,15 +26,14 @@ export interface ValuesBankDetails {
 }
 
 export interface RequestValues {
-    INN: string,
-    OGRNIP?: string,
-    DateOfRegistration: string,
-    ThereNoContract: boolean,
-    FullName?: string,
-    ShortName?: string,
-    OGRN?: string,
-    BIC: string,
-    NameBankBranch: string,
-    CorrespondentAccount: string,
-    PaymentAccount: string
+    ActivityValues: {
+        INN: string,
+        OGRNIP?: string,
+        DateOfRegistration: string,
+        ThereNoContract: boolean,
+        FullName?: string,
+        ShortName?: string,
+        OGRN?: string,
+    },
+    BankValues: ValuesBankDetails
 }

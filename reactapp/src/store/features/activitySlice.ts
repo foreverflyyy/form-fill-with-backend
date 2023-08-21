@@ -7,7 +7,8 @@ import {ValuesActivity} from "../../models/dto/RequestNewRequisite";
 export interface InitialType {
     typeActivity: TypeForm,
     showBankDetails: boolean,
-    activityValues: ValuesActivity
+    activityValues: ValuesActivity,
+    bankValues:
 }
 
 const initialState: InitialType = {

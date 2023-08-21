@@ -13,8 +13,7 @@ export const useValuesInputsForm = (inputForms: FormProperty[], typeActivity: st
     const changeValue = (value: TypesValues, idField: string) => {
         const newState = data?.map(item => {
             if (item.id === requiredForm.id) {
-                const prevRender = item.render
-                prevRender.map((subItem) => {
+                item.render.map((subItem) => {
                     if (subItem.id === idField)
                         subItem.value = value
 

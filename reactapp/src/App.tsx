@@ -1,5 +1,5 @@
 import {useSelector} from "react-redux";
-import BankInputsForm from "./components/BankInputsForm";
+import BankInputsForm from "./components/BankForm/BankInputsForm";
 import SelectTypeProperty from "./components/SelectTypeProperty";
 import ActivityInputsForm from "./components/ActivityInputsForm";
 import {selectActivity} from "./store/features/activitySlice";

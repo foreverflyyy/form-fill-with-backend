@@ -94,7 +94,7 @@ const ActivityInputsForm = () => {
 
             {error && <h3 className={"text-red-500 italic"}>{error}</h3>}
 
-            <div className={"flex"}>
+            <div className={"flex justify-end"}>
                 <Button onClick={nextForm}>
                     Далее
                 </Button>
