@@ -7,10 +7,11 @@ import {TypesValues} from "../models/TypesValues";
 
 interface Props {
     requiredForm: FormProperty,
-    changeValue: (value: TypesValues, idField: string) => void
+    changeValue: (value: TypesValues, idField: string) => void,
+    disabled?: boolean
 }
 
-const GenerateInputs = ({requiredForm, changeValue}: Props) => {
+const GenerateInputs = ({requiredForm, changeValue, disabled = false}: Props) => {
 
     return (
         <div className={"pt-[32px] flex flex-wrap content-start items-center"}>
@@ -20,6 +21,7 @@ const GenerateInputs = ({requiredForm, changeValue}: Props) => {
                         return (
                             <InputText
                                 key={property.id}
+                                disabled={disabled}
                                 property={property}
                                 onChange={(e) => changeValue(e, property.id)}
                                 value={property.value as string || ''}

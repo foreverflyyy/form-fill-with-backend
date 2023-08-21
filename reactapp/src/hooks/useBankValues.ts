@@ -14,17 +14,12 @@ export const useBankValues = (inputForms: FormProperty[]) => {
     const [bankForms, setBankForms] = useState<FormProperty[]>([requiredForm]);
 
     const changeValue = (idForm: number, value: TypesValues, idField: string) => {
-        console.log(1, bankForms);
 
         const newState = bankForms.map(form => {
-            console.log(2, form, idForm)
             if (form.id === idForm) {
                 form.render.map((input) => {
-                    /*console.log(2, input.id, idField)*/
                     if (input.id === idField) {
                         input.value = value;
-
-                        console.log(3, input)
                     }
 
                     return input;

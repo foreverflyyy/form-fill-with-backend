@@ -6,9 +6,10 @@ import {ReactComponent as PlusIcon} from "../assets/plus.svg";
 
 interface Props {
     handlerAddNewBank: () => void;
+    handlerRequest: () => void;
 }
 
-const FooterBankForm = ({handlerAddNewBank}: Props) => {
+const FooterBankForm = ({handlerAddNewBank, handlerRequest}: Props) => {
 
     const dispatch = useDispatch();
 
@@ -28,9 +29,12 @@ const FooterBankForm = ({handlerAddNewBank}: Props) => {
                     Добавить еще один банк
                 </div>
             </div>
-            <div className={"w-full pt-6 flex justify-between"}>
+            <div className={"w-full pt-6 flex flex-row justify-between"}>
                 <Button onClick={handlerBackToActivity}>
                     Назад
+                </Button>
+                <Button onClick={handlerRequest}>
+                    Отправить
                 </Button>
             </div>
         </div>

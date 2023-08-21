@@ -65,7 +65,7 @@ const ActivityInputsForm = () => {
     }
 
     const nextForm = () => {
-        const error = checkValidation(requiredForm);
+        /*const error = checkValidation(requiredForm);
 
         if(error) {
             setError(error);
@@ -74,7 +74,7 @@ const ActivityInputsForm = () => {
 
         const data = fillActivityValues(requiredForm.render, typeActivity)
         console.log(data);
-        dispatch(setActivityValues(data));
+        dispatch(setActivityValues(data));*/
         dispatch(setShowBankDetails(true));
     }
 

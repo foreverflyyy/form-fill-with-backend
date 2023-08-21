@@ -42,10 +42,10 @@ const BankInputsForm = () => {
         changeValue(numLastIndexForm, name, NamesInputs.NameBankBranch);
     }
 
-    const handlerRequest = async (indexForm: number) => {
+    const handlerRequest = async () => {
         setIsSuccess(false);
         setError("");
-        const error = checkValidation(bankForms[indexForm]);
+        const error = checkValidation(bankForms[numLastIndexForm]);
 
         if(error) {
             setError(error);
@@ -53,7 +53,7 @@ const BankInputsForm = () => {
         }
 
         const valuesBankDetails = fillBankDetails(
-            bankForms[indexForm].render,
+            bankForms[numLastIndexForm].render,
             TypeForm.BankDetails
         );
 
@@ -85,18 +85,17 @@ const BankInputsForm = () => {
                     <div className={"flex flex-col"} key={form.id}>
                         <GenerateInputs
                             requiredForm={form}
+                            disabled={numLastIndexForm !== i}
                             changeValue={(value: TypesValues, idField: string) => changeValue(i, value, idField)}
                         />
-                        <div className={"flex justify-end"}>
-                            <Button onClick={() => handlerRequest(i)}>
-                                Отправить
-                            </Button>
-                        </div>
                     </div>
                 ))}
             </div>
 
-            <FooterBankForm handlerAddNewBank={() => setNewBankForm()}/>
+            <FooterBankForm
+                handlerAddNewBank={() => setNewBankForm()}
+                handlerRequest={handlerRequest}
+            />
         </>
     );
 };
