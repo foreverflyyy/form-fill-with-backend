@@ -22,6 +22,8 @@ const ActivityInputsForm = () => {
 
     const {requiredForm, changeValue} = useValuesInputsForm(inputs, typeActivity);
 
+    console.log(inputs);
+
     const needValueProperty = requiredForm.render
         .find(item => item.id === NamesInputs.INN)?.value as string;
 
@@ -65,7 +67,7 @@ const ActivityInputsForm = () => {
     }
 
     const nextForm = () => {
-        /*const error = checkValidation(requiredForm);
+        const error = checkValidation(requiredForm);
 
         if(error) {
             setError(error);
@@ -74,7 +76,7 @@ const ActivityInputsForm = () => {
 
         const data = fillActivityValues(requiredForm.render, typeActivity)
         console.log(data);
-        dispatch(setActivityValues(data));*/
+        dispatch(setActivityValues(data));
         dispatch(setShowBankDetails(true));
     }
 
